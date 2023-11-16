@@ -1,11 +1,25 @@
 {
   "name": "weather-cli-bun",
   "module": "index.ts",
-  "type": "module",
   "devDependencies": {
+    "@types/inquirer": "^9.0.7",
     "bun-types": "latest"
   },
+  "type": "module",
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^3.3.0",
+    "async_hooks": "^1.0.0",
+    "axios": "^1.6.1",
+    "chalk-animation": "^2.0.3",
+    "dotenv": "^16.3.1",
+    "figlet": "^1.7.0",
+    "gradient-string": "^2.0.2",
+    "inquirer": "^9.2.12",
+    "nanospinner": "^1.1.0",
+    "open": "^9.1.0",
+    "readline-sync": "^1.4.10"
   }
 }

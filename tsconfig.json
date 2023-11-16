@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
+    "esModuleInterop": true,
     "lib": ["ESNext"],
-    "module": "esnext",
-    "target": "esnext",
-    "moduleResolution": "bundler",
+    "module": "CommonJS",
     "moduleDetection": "force",
     "allowImportingTsExtensions": true,
     "noEmit": true,
