@@ -1,6 +1,7 @@
 #!/usr/bin/env bun
 import axios from "axios";
 import { input } from '@inquirer/prompts';
+import { AnyFunction } from "bun";
 
 const apiKey = process.env.API_KEY;
 
@@ -9,14 +10,14 @@ interface WeatherData {
     main: { temp: number };
 }
 
-const getWeather = async (city: string): Promise<WeatherData> => {
-    // try {
+const getWeather = async (city: string): Promise<WeatherData | null> => {
+    try {
         const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`);
         return response.data;
-    // } catch (e) {
-    //     console.error('Error fetching weather data ', e.message);
-    //     return null;
-    // }
+    } catch (e: any) {
+        console.error('Error fetching weather data ', e.message);
+        return null;
+    }
 }
 
 const displayWeather = (data: WeatherData) => {
@@ -36,10 +37,14 @@ const temperature = async (): Promise<void> => {
     const city = await input({
         message: "Where would you like to check the weather?",
         default: 'Budapest',
-      });
+    });
 
     const weatherData = await getWeather(city);
-    displayWeather(weatherData);
+    if (weatherData !== null) {
+        displayWeather(weatherData);
+    } else {
+        console.error('Weather data is null. Unable to display.');
+    }
 }
 
 temperature();
