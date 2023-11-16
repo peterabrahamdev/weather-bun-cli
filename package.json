@@ -2,8 +2,11 @@
   "name": "weather-cli-bun",
   "module": "index.ts",
   "devDependencies": {
+    "@commitlint/cli": "^18.4.2",
+    "@commitlint/config-conventional": "^18.4.2",
     "@types/inquirer": "^9.0.7",
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "husky": "^8.0.3"
   },
   "type": "module",
   "peerDependencies": {
