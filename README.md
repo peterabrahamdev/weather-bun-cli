@@ -2,6 +2,8 @@
 
 This simple weather app fetches current weather information using the OpenWeatherMap API and displays it in the console.
 
+![weather-cli-bun](weather-cli-bun.svg)
+
 ## Prerequisites
 
 - [Bun](https://bun.sh/docs/installation) installed
