@@ -21,9 +21,6 @@ This simple weather app fetches current weather information using the OpenWeathe
    bun install -D @types/inquirer
    ```
    ```bash
-   bun install figlet
-   ```
-   ```bash
    bun install axios
    ```
 3. Set your OpenWeatherApp API key:  
